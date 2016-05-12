@@ -1,12 +1,21 @@
 #include <iostream>
-#include <conio.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <conio2.h>
+//#include <conio.h>
+#include <windows.h>
+//#include <myconstdwin.h>
 
 using namespace std;
 // constante de la taille matrice
 #define N 10
 
+ COORD coord = {0, 0}; // sets coordinates to 0,0
+//void gotoxy (int x, int y)
+//    {
+//            coord.X = x; coord.Y = y; // X and Y coordinates
+//            SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+//    }
 // valeur des 4 couleurs : blanc, gris clair, gris foncé et noir
 int couleur[4] = {15, 7, 8, 0};
 
@@ -91,4 +100,3 @@ int main()
     cout << N << endl;
     return 0;
 }
-
