@@ -67,7 +67,7 @@ void accentueContraste(int image[N][N]){
             if(10*image[x][y] < moyenne && 10*image[x][y] >= 10){
                 image[x][y] -=1;
             }
-            //cond 1 > a la moyenne && cond2 >= 1 pour ne pas aller au delà de 3
+            //cond 1 > a la moyenne && cond2 <= 2 pour ne pas aller au delà de 3
             else if(10*image[x][y] > moyenne && 10*image[x][y] <= 20){
                 image[x][y] +=1;
             }
