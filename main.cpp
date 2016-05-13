@@ -8,7 +8,7 @@
 
 using namespace std;
 // constante de la taille matrice
-#define N 10
+#define N 3
 
  COORD coord = {0, 0}; // sets coordinates to 0,0
 //void gotoxy (int x, int y)
@@ -55,6 +55,8 @@ void afficheImage(int image[N][N], int position){
             gotoxy(x*3+1, y+2) ; textbackground(couleur[image[x][y]]); cout << " " ;
         }
     }
+    //retour fond noir
+    textbackground(couleur[3]);
 };
 
 void accentueContraste(int image[N][N]){
@@ -67,6 +69,8 @@ void accentueContraste(int image[N][N]){
     }
     moyenne *= 10; // pas de virgule donc décalage de 10 pour 1 chiffre significatif
     moyenne = moyenne/(N*N);
+    //affichage moyenne
+    cout << "moyenne :"<<moyenne<<"       ";
 
     //remplacement
     for (int x=0 ; x<N ; x++) {
@@ -81,6 +85,9 @@ void accentueContraste(int image[N][N]){
                 image[x][y] +=1;
             }
             else{}
+
+            //affichage valeur contrastées
+            cout << image[x][y];
         }
     }
 };
@@ -92,11 +99,11 @@ int main()
     //saisie de  la matrice d'origine
     saisieMatrice(image);
     // affichage de l’image
-    afficheImage(image, 1) ;
+    //afficheImage(image, 1) ;
     // accentuation du contraste
     accentueContraste(image) ;
     // affichage de l’image
     afficheImage(image, N+10) ;
-    cout << N << endl;
+    //cout << N << endl;
     return 0;
 }
