@@ -4,7 +4,6 @@
 #include <conio2.h>
 //#include <conio.h>
 #include <windows.h>
-//#include <myconstdwin.h>
 
 using namespace std;
 // constante de la taille matrice
