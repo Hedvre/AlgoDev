@@ -48,8 +48,9 @@ void afficheImage(int image[N][N], int position){
             gotoxy(x + position, y+2+N) ; textbackground(couleur[image[x][y]]); cout << " " ;
         }
     }
-    //retour au fond noir
-    textbackground(3);
+
+    //retour au fond noir pour la console ;)
+    textbackground(couleur[3]);
 };
 
 void accentueContraste(int image[N][N]){
@@ -61,19 +62,19 @@ void accentueContraste(int image[N][N]){
         }
     }
     moyenne *= 10; // pas de virgule donc décalage de 10 pour 1 chiffre significatif
-    moyenne = moyenne/(N*N);
+    moyenne /=(N*N);
 
     //remplacement des valeurs de la matrice
     for (int x=0 ; x<N ; x++) {
         for (int y=0 ; y<N ; y++){
             // ne pas oublier de multiplier par 10
             //cond 1 < a la moyenne && cond2 >= 1 pour ne pas descendre en dessous de 0
-            if(10*image[x][y] < moyenne && 10*image[x][y] >= 10){
-                image[x][y] -=1;
+            if(10*image[x][y] < moyenne && image[x][y] > 0){
+                --image[x][y];
             }
             //cond 1 > a la moyenne && cond2 <= 2 pour ne pas aller au delà de 3
-            else if(10*image[x][y] > moyenne && 10*image[x][y] <= 20){
-                image[x][y] +=1;
+            else if(10*image[x][y] > moyenne && image[x][y] < 3){
+                ++image[x][y];
             }
             else{}
         }
@@ -94,3 +95,4 @@ int main()
     afficheImage(image, N+10) ;
     return 0;
 }
+
