@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <conio2.h>
 //#include <conio.h>
-#include <windows.h>
+
 
 using namespace std;
 // constante de la taille matrice
@@ -76,7 +76,9 @@ void accentueContraste(int image[N][N]){
             else if(10*image[x][y] > moyenne && image[x][y] < 3){
                 ++image[x][y];
             }
-            else{}
+            else{
+                //on ne fait rien
+            }
         }
     }
 };
