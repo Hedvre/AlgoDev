@@ -4,17 +4,17 @@
 #include <conio2.h>
 //#include <conio.h>
 
-
 using namespace std;
+
 // constante de la taille matrice
 #define N 10
-
 
 int couleur[4] = {15, 7, 8, 0};
 
 
 //déclaration fonctions
 
+//fonction saisie forçant l'utilisateur à rentrer un charactère entre 0 et 3 inclus
 int saisie(int x, int y) {
     int val ;
     do {
@@ -24,6 +24,8 @@ int saisie(int x, int y) {
     return (val-48) ;
 }
 
+//Saisie de la matrice
+//prend en param une matrice[N][N]
 void saisieMatrice(int image[N][N]){
     gotoxy(1, 1) ; cout << "Saisie de la matrice (valeurs 0 blanc, 1 gris clair, 2 gris foncé ou 3 noir) :" ;
     // affihage des points pour montrer où se fait la saisie
@@ -40,7 +42,8 @@ void saisieMatrice(int image[N][N]){
     }
 };
 
-
+//Affichage d'une image en console
+//prend en param une matrice[N][N] et une position
 void afficheImage(int image[N][N], int position){
     gotoxy(position, 1) ;
     for (int x=0 ; x<N ; x++) {
@@ -48,11 +51,13 @@ void afficheImage(int image[N][N], int position){
             gotoxy(x + position, y+2+N) ; textbackground(couleur[image[x][y]]); cout << " " ;
         }
     }
-
     //retour au fond noir pour la console ;)
     textbackground(couleur[3]);
 };
 
+
+//Accentuation du contraste :
+//prend en param une matrice[N][N]
 void accentueContraste(int image[N][N]){
     int moyenne = 0;
     //calcul de la moyenne
@@ -83,6 +88,8 @@ void accentueContraste(int image[N][N]){
     }
 };
 
+
+//Boucle principale
 int main()
 {
     //déclaration de la matrice
