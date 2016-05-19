@@ -28,7 +28,7 @@ int saisie(int x, int y) {
 //prend en param une matrice[N][N]
 void saisieMatrice(int image[N][N]){
     gotoxy(1, 1) ; cout << "Saisie de la matrice (valeurs 0 blanc, 1 gris clair, 2 gris foncé ou 3 noir) :" ;
-    // affihage des points pour montrer où se fait la saisie
+    // affichage des points pour montrer où se fait la saisie
     for (int x=0 ; x<N ; x++) {
         for (int y=0 ; y<N ; y++) {
             gotoxy(x*3+1, y+2) ; cout << "." ;
